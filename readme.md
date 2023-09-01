@@ -10,15 +10,9 @@ Search youtube for videos with titles that look like the default filenames from 
 source install.sh
 ```
 
-(Requires python3 and [ffmpeg](https://ffmpeg.org/))
+(Requires python3 and [homebrew](https://brew.sh/))
 
 ## Usage
-
-Activate the virtualenv:
-
-```
-source .venv/bin/activate
-```
 
 Define the song and video parameters:
 
@@ -44,19 +38,21 @@ bpm = 92
 audio_file = '01 The North Country - Snowday MASTER_MP3_320kbps.mp3'
 fps = 24
 vid_size = '1280:720'
+out_filename = 'snow_day_randocut.mp4'
 ```
 
 Do the thing:
 
 ```
-rando_cut(cut_config, bpm, audio_file, fps, vid_size)
+from randoscope import rando_cut
+rando_cut(cut_config, bpm, audio_file, fps, vid_size, out_filename)
 ```
 
 ## ideas
 
-- split screens
-- curate videos
-    - slack bot to vote? (veto)
+- titles "exquisite corpse" and "(born at the right time)"
+- split screens mouth
+- regenerate a few times, choose the best one (make sure metadata capture is working first)
 - glitchy effect:
     - cut fast between 2 vids
     - speed manipulations
